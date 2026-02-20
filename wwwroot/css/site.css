@@ -1,31 +1,54 @@
-html {
-  font-size: 14px;
+:root {
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --accent-color: #06b6d4; /* Vibrant Cyan */
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+body.bg-dark-theme {
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.glass-nav {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.text-gradient {
+    background: linear-gradient(to right, #06b6d4, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-body {
-  margin-bottom: 60px;
+.glass-card {
+    background: var(---glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 1.5rem;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Floating Animation for Logo */
+.floating-logo {
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.3));
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.form-control {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(6, 182, 212, 0.25);
+    color: white;
 }
